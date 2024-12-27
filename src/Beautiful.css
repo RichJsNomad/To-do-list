@@ -120,10 +120,11 @@
 }
 
 body {
-  background: var(--background-primary);
+  background: #030615;
   color: var(--color-primary);
   font-size: 0.875rem;
   line-height: 1.6rem;
+  outline: none;
 }
 
 /* Special */
