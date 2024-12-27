@@ -1,7 +1,18 @@
 import React from "react";
 
 const Tabs = () => {
-  return <div>Tabs</div>;
+  const tabs = ["All", "Open", "Completed"];
+  return (
+    <nav>
+      {tabs.map((tab, tabIndex) => {
+        return (
+          <button key={tabIndex}>
+            <h4>{tab}</h4>
+          </button>
+        );
+      })}
+    </nav>
+  );
 };
 
 export default Tabs;
