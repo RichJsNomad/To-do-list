@@ -129,6 +129,8 @@ body {
 
 /* Special */
 .text-gradient {
+  display: flex;
+  justify-content: center;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-image: linear-gradient(

@@ -20,6 +20,8 @@ h1 {
 
 .tab-container {
   overflow-x: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tab-button {

@@ -11,7 +11,7 @@ const Header = (props) => {
   return (
     <header className="text-gradient">
       <h1>
-        You have {todosLength} open {isTasksPlural}
+        You have {todosLength} open {taskOrTasks}
       </h1>
     </header>
   );

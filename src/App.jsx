@@ -14,9 +14,10 @@ function App() {
   return (
     <>
       <Header todos={todos} />
-      <Tabs todos={todos} />
-      <TodoList todos={todos} />
       <TodoInput todos={todos} />
+      <Tabs todos={todos} />
+
+      <TodoList todos={todos} />
     </>
   );
 }
