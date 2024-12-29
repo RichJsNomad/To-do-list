@@ -3,7 +3,7 @@ import React from "react";
 const TodoCard = (props) => {
   const { todoIndex, todos } = props;
   const todo = todos[todoIndex];
-  console.log(todo);
+
   return (
     <div className="card todo-item">
       <p>{todo.input}</p>
