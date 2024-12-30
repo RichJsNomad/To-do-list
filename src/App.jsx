@@ -6,37 +6,43 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 function App() {
-  //const todos = [
-  // { input: "Hello! Add your first todo!", complete: true },
-  //  { input: "Watch React.js vids on youtube", complete: false },
-  // { input: "Visit my aunt and bring a gift for her", complete: true },
-  //  { input: "Finish my React.js project by 7 pm", complete: true },
-  //];
-
   const [todos, setTodos] = useState([
     { input: "Hello! Add your first todo!", complete: true },
-    {
-      input: "Hi",
-      complete: false,
-    },
   ]);
+
+  const [selectedTab, setSelectedTab] = useState("Open");
 
   function handleAddTodo(newTodo) {
     const newTodoList = [...todos, { input: newTodo, complete: false }];
     setTodos(newTodoList);
   }
 
-  function handleEditTodo() {}
+  function handleEditTodo(index) {
+    let newTodoList = [];
+  }
 
-  function handleDeleteTodo() {}
+  function handleDeleteTodo(index) {
+    let newTodoList = todos.filter((val, valIndex) => {
+      return valIndex !== index;
+    });
+    setTodos(newTodoList);
+  }
 
   return (
     <>
       <Header todos={todos} />
       <TodoInput handleAddTodo={handleAddTodo} />
-      <Tabs todos={todos} />
+      <Tabs
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+        todos={todos}
+      />
 
-      <TodoList todos={todos} />
+      <TodoList
+        handleDeleteTodo={handleDeleteTodo}
+        selectedTab={selectedTab}
+        todos={todos}
+      />
     </>
   );
 }

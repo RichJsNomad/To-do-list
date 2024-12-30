@@ -1,7 +1,7 @@
 import React from "react";
 
 const TodoCard = (props) => {
-  const { todoIndex, todos } = props;
+  const { todoIndex, todos, handleDeleteTodo } = props;
   const todo = todos[todoIndex];
 
   return (
@@ -12,7 +12,13 @@ const TodoCard = (props) => {
           <h6>Done</h6>
         </button>
         <button>
-          <h6>Delete</h6>
+          <h6
+            onClick={() => {
+              handleDeleteTodo(todoIndex);
+            }}
+          >
+            Delete
+          </h6>
         </button>
       </div>
     </div>
