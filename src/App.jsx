@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <Header todos={todos} />
-      <TodoInput todos={todos} handleAddTodo={handleAddTodo} />
+      <TodoInput handleAddTodo={handleAddTodo} />
       <Tabs todos={todos} />
 
       <TodoList todos={todos} />

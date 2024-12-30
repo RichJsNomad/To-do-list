@@ -14,7 +14,15 @@ const TodoInput = (props) => {
         }}
         placeholder="Enter your todo"
       />
-      <button>
+      <button
+        onClick={() => {
+          if (!inputValue) {
+            returns;
+          }
+          handleAddTodo(inputValue);
+          setInputValue("");
+        }}
+      >
         <i className="fa-solid fa-plus"></i>
       </button>
     </div>
