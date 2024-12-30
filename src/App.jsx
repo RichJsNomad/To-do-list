@@ -7,7 +7,7 @@ import TodoList from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
-    { input: "Hello! Add your first todo!", complete: true },
+    { input: "Привет, напиши первую задачу!", complete: true },
   ]);
 
   const [selectedTab, setSelectedTab] = useState("Open");
@@ -18,7 +18,11 @@ function App() {
   }
 
   function handleEditTodo(index) {
-    let newTodoList = [];
+    let newTodoList = [...todos];
+    let completedTodo = todos[index];
+    completedTodo["complete"] = true;
+    newTodoList[index] = completedTodo;
+    setTodos(newTodoList);
   }
 
   function handleDeleteTodo(index) {
@@ -39,6 +43,7 @@ function App() {
       />
 
       <TodoList
+        handleEditTodo={handleEditTodo}
         handleDeleteTodo={handleDeleteTodo}
         selectedTab={selectedTab}
         todos={todos}

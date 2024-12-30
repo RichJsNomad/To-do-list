@@ -2,7 +2,7 @@ import React from "react";
 import TodoCard from "./TodoCard";
 
 const TodoList = (props) => {
-  const { todos, selectedTab, handleDeleteTodo } = props;
+  const { todos, selectedTab, handleDeleteTodo, handleEditTodo } = props;
 
   const filteredTodosList =
     selectedTab === "All"
@@ -14,7 +14,14 @@ const TodoList = (props) => {
   return (
     <>
       {filteredTodosList.map((todo, todoIndex) => {
-        return <TodoCard key={todoIndex} todoIndex={todoIndex} {...props} />;
+        return (
+          <TodoCard
+            key={todoIndex}
+            todoIndex={todoIndex}
+            todo={todo}
+            {...props}
+          />
+        );
       })}
     </>
   );

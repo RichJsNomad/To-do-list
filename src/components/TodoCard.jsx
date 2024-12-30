@@ -1,14 +1,18 @@
 import React from "react";
 
 const TodoCard = (props) => {
-  const { todoIndex, todos, handleDeleteTodo } = props;
-  const todo = todos[todoIndex];
+  const { todoIndex, todo, handleDeleteTodo, handleEditTodo } = props;
 
   return (
     <div className="card todo-item">
       <p>{todo.input}</p>
       <div className="todo-buttons">
-        <button disabled={todo.complete}>
+        <button
+          onClick={() => {
+            handleEditTodo(todoIndex);
+          }}
+          disabled={todo.complete}
+        >
           <h6>Done</h6>
         </button>
         <button>
